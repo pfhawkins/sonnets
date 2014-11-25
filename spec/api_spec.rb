@@ -17,7 +17,7 @@ describe Sonnet::API do
 
       it 'has an application/json content type' do
         header 'Content-Type', 'application/json'
-        get "/shakespeare" #, {"CONTENT_TYPE" => "application/json"}
+        get "/shakespeare"
         expect(last_response.header).to include({"Content-Type" => "application/json"})
       end
     end
