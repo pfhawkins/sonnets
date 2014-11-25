@@ -4,7 +4,7 @@ require 'json'
 module Sonnet 
   class API < Grape::API
     get :shakespeare do
-      header 'Content-Type', 'application/json'
+      content_type "application/json"
     end
   end
 end
