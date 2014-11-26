@@ -15,10 +15,10 @@ describe Sonnet::API do
         expect(last_response).to be_ok
       end
 
-      it 'has an application/json content type' do
-        header 'Content-Type', 'application/json'
+      it 'has an application/vnd.api+json content type' do
+        header 'Content-Type', 'application/vnd.api+json'
         get "/shakespeare"
-        expect(last_response.header).to include({"Content-Type" => "application/json"})
+        expect(last_response.header).to include({"Content-Type" => "application/vnd.api+json"})
       end
     end
   end
