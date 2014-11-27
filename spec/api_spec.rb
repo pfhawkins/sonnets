@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'json_spec'
 
 describe Sonnet::API do
   include Rack::Test::Methods
