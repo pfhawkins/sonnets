@@ -5,9 +5,8 @@ module Sonnet
   class API < Grape::API
     content_type :txt, "application/vnd.api+json"
 
-    get :shakespeare do
-
-
+    get "/" do
     end
+
   end
 end
