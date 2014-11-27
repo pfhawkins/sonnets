@@ -6,6 +6,7 @@ module Sonnet
     content_type :txt, "application/vnd.api+json"
 
     get "/" do
+      "poets".to_json
     end
 
   end

@@ -21,6 +21,12 @@ describe Sonnet::API do
         get "/"
         expect(last_response.header).to include({"Content-Type" => "application/vnd.api+json"})
       end
+
+      it 'contains a poets object' do
+        get "/"
+        expect(last_response.body).to include("poets")
+        expect(last_response.body).to include_json(%("poets"))
+      end
     end
   end
 end
