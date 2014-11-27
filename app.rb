@@ -3,10 +3,11 @@ require 'json'
 
 module Sonnet 
   class API < Grape::API
-    content_type :txt, "application/vnd.api+json"
+    format :json
+    content_type :json, "application/vnd.api+json"
 
     get "/" do
-      "poets".to_json
+      "poets"
     end
 
   end
