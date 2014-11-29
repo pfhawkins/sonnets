@@ -7,7 +7,7 @@ module Sonnet
     content_type :json, "application/vnd.api+json"
 
     get "/" do
-      "poets"
+      {:poets => :shakespeare}
     end
 
   end

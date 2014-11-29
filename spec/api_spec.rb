@@ -23,8 +23,9 @@ describe Sonnet::API do
 
     it 'contains a poets object' do
       get "/"
-      expect(last_response.body).to include("poets")
-      expect(last_response.body).to include_json(%("poets"))
+      expect(last_response.body).to have_json_path("poets")
+      expect(last_response.body).to include_json(%("shakespeare"))
+      expect(last_response.body).to be_json_eql(%({"poets":"shakespeare"}))
     end
   end
 end
