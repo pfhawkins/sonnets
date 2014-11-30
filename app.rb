@@ -7,7 +7,7 @@ module Sonnet
     content_type :json, "application/vnd.api+json"
 
     get "/" do
-      {:poets => :shakespeare}
+      {:poets => { :shakespeare => { :href => "http://sonnets.hyperverses.com/shakespeare" }}}
     end
 
   end

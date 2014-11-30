@@ -24,8 +24,13 @@ describe Sonnet::API do
     it 'contains a poets object' do
       get "/"
       expect(last_response.body).to have_json_path("poets")
-      expect(last_response.body).to include_json(%("shakespeare"))
-      expect(last_response.body).to be_json_eql(%({"poets":"shakespeare"}))
+      expect(last_response.body).to have_json_path("poets/shakespeare")
+    end
+
+    it 'links to the shakespeare poet ala JSON-API' do
+      get "/"
+      expect(last_response.body).to have_json_path("poets/shakespeare/href")
+      expect(last_response.body).to include_json(%("http://sonnets.hyperverses.com/shakespeare")).at_path("poets/shakespeare/href")
     end
   end
 end
