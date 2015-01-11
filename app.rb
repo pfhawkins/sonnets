@@ -10,5 +10,9 @@ module Sonnet
       {:poets => { :shakespeare => { :href => "http://sonnets.hyperverses.com/shakespeare" }}}
     end
 
+    get "/shakespeare" do
+      {:links => { :id => "http://sonnets.hyperverses.com/shakespeare/:id"}}
+    end
+
   end
 end

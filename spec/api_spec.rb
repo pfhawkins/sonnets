@@ -33,4 +33,18 @@ describe Sonnet::API do
       expect(last_response.body).to include_json(%("http://sonnets.hyperverses.com/shakespeare")).at_path("poets/shakespeare/href")
     end
   end
+
+  describe "GET /shakespeare" do
+
+    it 'provides a url template for getting sonnets by id', :shakespeare => true do
+      get "/shakespeare"
+      expect(last_response.body).to have_json_path("links") 
+      expect(last_response.body).to include_json(%("http://sonnets.hyperverses.com/shakespeare/:id")).at_path("links/id")
+    end
+
+    it 'provides a url template for getting sonnet lines by id and line'
+    it 'provides a link to getting a random sonnet'
+    it 'provides a url template for getting a random line from a particular sonnet'
+    it 'provides a link to getting a random line from a random sonnet'
+  end
 end
